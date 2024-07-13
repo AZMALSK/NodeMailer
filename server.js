@@ -30,6 +30,8 @@ const upload = multer({
     limits: { fileSize: 5 * 1024 * 1024 } 
 });
 
+// Serve static files from the 'uploads' directory
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 // Configure the transporter
 const transporter = nodemailer.createTransport({
