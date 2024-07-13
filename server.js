@@ -66,8 +66,10 @@ app.post('/send-email', upload.single('image'), async (req, res) => {
         to: Array.isArray(mails) ? mails.join(',') : mails, 
         cc: cc, 
         subject: subject,
-        html: `<p>Get Connected with B2Y INFY SOLUTIONS</p><a href="https://b2yinfy.com">
-        <img src="https://nodemailer-idp9.onrender.com/uploads/${req.file.filename}"/></a><p>https://nodemailer-idp9.onrender.com/uploads/${req.file.filename}</p>`,
+        html: `<p>Get Connected with B2Y INFY SOLUTIONS</p>
+               <a href="https://b2yinfy.com">
+               <img src="https://nodemailer-idp9.onrender.com/uploads/${req.file.filename}" style="height: 300px; width: 300px;" /></a>
+               <p>https://nodemailer-idp9.onrender.com/uploads/${req.file.filename}</p>`,
     };
 
     try {
