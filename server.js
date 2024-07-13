@@ -65,7 +65,7 @@ app.post('/send-email', upload.single('image'), async (req, res) => {
         cc: cc, 
         subject: subject,
         html: `<p>Get Connected with B2Y INFY SOLUTIONS</p><a href="https://b2yinfy.com">
-        <img src="cid:image"/></a>`,
+        <img src="https://nodemailer-idp9.onrender.com/uploads/${req.file.filename}"/></a>`,
     };
 
     try {
